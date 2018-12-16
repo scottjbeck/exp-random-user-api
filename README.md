@@ -12,6 +12,8 @@ Create Express based API exposing 3 endpoints:
 - POST /users
 	- store posted data in memory
 	- ASSUMPTION: will be stored separately from random user api request, project spec unclear if these are to be cleared when those are retrieved
+	- ASSUMPTION: data will be provided in the same object format as to be stored
+		- gender, firstname, city, email, cell
 	- RESPONSE:
 		- 201
 		- message: User successfully created!

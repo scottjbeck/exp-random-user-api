@@ -27,7 +27,7 @@ describe("API testing", () => {
 			})
 	})
 
-	test("GET /users shoudl return 10 different users", () => {
+	test("GET /users should return 10 different users", () => {
 		return request(app)
 			.get("/users")
 			.then(response => {
@@ -35,6 +35,36 @@ describe("API testing", () => {
 				const users2 = JSON.stringify(response.body.users)
 				//using strinfigy, assumes that would be hard to randomly retrieve the exact 10 twice
 				expect(users1).not.toEqual(users2)
+			})
+	})
+
+	test("POST /users should create new user", () => {
+		return request(app)
+			.post("/users")
+			.send({
+				gender: "male",
+				firstname: "bar",
+				city: "baz",
+				email: "someting@example.com",
+				cell: "1-800-555-5555"
+			})
+			.then(response => {
+				expect(response.statusCode).toBe(201)
+			})
+	})
+
+	test("POST /users should fail to create with missing property", () => {
+		return request(app)
+			.post("/users")
+			.send({
+				gender: "male",
+				firstname: "",
+				city: "baz",
+				email: "someting@example.com",
+				cell: "1-800-555-5555"
+			})
+			.then(response => {
+				expect(response.statusCode).toBe(400)
 			})
 	})
 })
