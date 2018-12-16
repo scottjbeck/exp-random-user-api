@@ -25,6 +25,7 @@ Create Express based API exposing 3 endpoints:
 		- message: User not found!
 
 ## Running application
+- Application will run on a default port of 3000: `http://localhost:3000`
 - Development:
 	- `yarn dev`
 	- will run the express server with nodemon for automatic reloading of changes
@@ -33,3 +34,7 @@ Create Express based API exposing 3 endpoints:
 	- creates a new produciton compiled server resource in `/build` directory
 	- `yarn prod`
 	- runs the production build with raw node service
+
+## Testing
+- `yarn test`
+	- runs jest test suite to validate the requirements

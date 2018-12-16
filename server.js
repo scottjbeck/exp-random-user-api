@@ -1,14 +1,5 @@
-import express from "express"
-import packageJSON from "./package.json"
+import app from "./src/app"
 
-const app = express()
+const port = process.env.PORT || 3000
 
-app.get("/", (req, res) => {
-	res.status(200).send({
-		message: "Welcome",
-		project: packageJSON.name,
-		version: packageJSON.version
-	})
-})
-
-app.listen(3000)
+app.listen(port)
