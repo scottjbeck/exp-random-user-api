@@ -4,6 +4,14 @@ const Joi = JoiBase.extend(require("joi-phone-number"))
 
 import store from "../store"
 
+/*
+
+	Controller - Users
+	- handle REST methods for user routes
+
+*/
+
+//Configurable defaults for grabbing the random user data
 const DEFAULTS = {
 	RANDOMUSER_API: "https://randomuser.me/api",
 	RANDOMUSER_QUANTITY: 10

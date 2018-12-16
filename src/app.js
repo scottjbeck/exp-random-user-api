@@ -5,6 +5,7 @@ import bodyParser from "body-parser"
 import packageJSON from "../package.json"
 import routes from "./routes"
 
+//standard express setup
 const app = express()
 app.use(helmet())
 app.use(bodyParser.json())
@@ -18,6 +19,7 @@ app.get("/", (req, res) => {
 	})
 })
 
+//add the routes to the app
 routes(app)
 
 export default app
