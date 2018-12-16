@@ -24,3 +24,12 @@ Create Express based API exposing 3 endpoints:
 		- 404
 		- message: User not found!
 
+## Running application
+- Development:
+	- `yarn dev`
+	- will run the express server with nodemon for automatic reloading of changes
+- Production:
+	- `yarn build`
+	- creates a new produciton compiled server resource in `/build` directory
+	- `yarn prod`
+	- runs the production build with raw node service
