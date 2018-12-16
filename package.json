@@ -1,0 +1,11 @@
+{
+  "name": "exp-random-user-api",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "git@github.com:scottjbeck/exp-random-user-api.git",
+  "author": "Scott Beck <scottjbeck@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=10.4.0"
+  }
+}
