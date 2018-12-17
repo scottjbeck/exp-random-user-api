@@ -10,6 +10,12 @@ const app = express()
 app.use(helmet())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.text())
+app.use(
+	bodyParser.json({
+		type: "application/json"
+	})
+)
 
 app.get("/", (req, res) => {
 	res.status(200).send({

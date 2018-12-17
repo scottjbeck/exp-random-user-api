@@ -54,7 +54,7 @@ usersController.create = async (req, res, next) => {
 
 	store.usersPosted.push(user)
 
-	res.status(201).send({ message: "User successfully created!", user })
+	return res.status(201).send({ message: "User successfully created!", user })
 }
 
 // list method
@@ -82,7 +82,22 @@ usersController.list = async (req, res, next) => {
 
 	store.users = users
 
-	res.status(200).send({ users })
+	return res.status(200).send({ users })
+}
+
+// list users
+// - matching url param: firstname
+usersController.listByFirstname = (req, res, next) => {
+	console.log(req.params)
+	const users = store.usersAll().filter(user => {
+		return user.firstname === req.params.firstname
+	})
+
+	if (users.length === 0) {
+		return res.status(404).send({ message: "User not found!" })
+	}
+
+	return res.status(200).send({ users })
 }
 
 export default usersController
