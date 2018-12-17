@@ -40,3 +40,10 @@ Create Express based API exposing 3 endpoints:
 ## Testing
 - `yarn test`
 	- runs jest test suite to validate the requirements
+
+## Notes
+- future enhancements:
+	- use autocannon for optimization
+	- likely switch from express if speed is of concern
+	- split out data models when more schemas are present
+	- decouple route handling form controllers
