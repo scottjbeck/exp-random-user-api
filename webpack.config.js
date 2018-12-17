@@ -4,7 +4,7 @@ const webpack = require("webpack")
 module.exports = {
 	mode: "production",
 	entry: {
-		server: "./server.js"
+		server: ["@babel/polyfill", "./server.js"]
 	},
 	output: {
 		path: path.join(__dirname, "build"),
